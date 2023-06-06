@@ -1,4 +1,6 @@
-## C# for Visual Studio Code (powered by OmniSharp)
+## C# for Visual Studio Code
+
+C# is the feature-rich, language support for C# in VS Code. This extension is being updated to be powered by a new fully open-source Language Server Protocol (LSP) Host.  To use the LSP-powered version, click on the “Switch to Pre-Release Version” or “Install Pre-Release” button or above. To use the OmniSharp-powered version, click “Install Release Version” or continuing using the 1.x version you already have installed.
 
 Welcome to the C# extension for Visual Studio Code! This extension provides the following features inside VS Code:
 
@@ -31,64 +33,56 @@ If you still need Unity or .NET Framework support, you can set `omnisharp.useMod
 
 See issue [#5120](https://github.com/OmniSharp/omnisharp-vscode/issues/5120) for more details.
 
-## What's new in 1.25.1
-* Provide actionable error messages for .NET SDK issues ([#5223](https://github.com/OmniSharp/omnisharp-vscode/issues/5223), PR: [#5225](https://github.com/OmniSharp/omnisharp-vscode/pull/5225))
+## What's new in 1.25.9
+* Readme updates (PR: [#5705](https://github.com/OmniSharp/omnisharp-vscode/pull/5672))
 
-## What's new in 1.25.0
-* Make SDK build of OmniSharp the default ([#5120](https://github.com/OmniSharp/omnisharp-vscode/issues/5120), PR: [#5176](https://github.com/OmniSharp/omnisharp-vscode/pull/5176))
-* Add auto complete name to class, interface, enum, struct etc. snippets (PR: [#5198](https://github.com/OmniSharp/omnisharp-vscode/pull/5198))
-* Add a fallback for ps in remoteProcessPickerScript ([#4096](https://github.com/OmniSharp/omnisharp-vscode/issues/4096), PR: [#5207](https://github.com/OmniSharp/omnisharp-vscode/pull/5207))
-* Clear nullability warnings in server/omnisharp.ts (PR: [#5199](https://github.com/OmniSharp/omnisharp-vscode/pull/5199))
-* Fix nullability for autoStart preferredPath (PR: [#5192](https://github.com/OmniSharp/omnisharp-vscode/pull/5192))
-* coreclr debug configuration should support input variables for envFile ([#5102](https://github.com/OmniSharp/omnisharp-vscode/issues/5102), PR: [#5189](https://github.com/OmniSharp/omnisharp-vscode/pull/5189))
-* Fix small spelling mistake (PR: [#5215](https://github.com/OmniSharp/omnisharp-vscode/pull/5215))
-* Low-hanging nullable fruit (PR: [#5186](https://github.com/OmniSharp/omnisharp-vscode/pull/5186))
-* Fire a buffer update instead of filechanged when active editor changes  ([#5216](https://github.com/OmniSharp/omnisharp-vscode/issues/5216), PR: [#5218](https://github.com/OmniSharp/omnisharp-vscode/pull/5218))
-* Add support for InlayHint.TextEdits (PR: [#5177](https://github.com/OmniSharp/omnisharp-vscode/pull/5177))
-* Fix .net6 OmniSharp acquisition on Linux arm64 (PR: [#5172](https://github.com/OmniSharp/omnisharp-vscode/pull/5172))
-* Remove project.json reference in debugger.md (PR: [#5210](https://github.com/OmniSharp/omnisharp-vscode/pull/5210))
-* Update debugger to 1.24.5 (PR: [#5211](https://github.com/OmniSharp/omnisharp-vscode/pull/5211))
-  * Fixes [#5083](https://github.com/OmniSharp/omnisharp-vscode/issues/5083)
-* Update OmniSharp to 1.39.0 (PR: [#5219](https://github.com/OmniSharp/omnisharp-vscode/pull/5219))
-  * Update Roslyn to 4.3.0-2.22267.5 (PR: [omnisharp-roslyn#2401](https://github.com/OmniSharp/omnisharp-roslyn/pull/2401))
-  * Fixed run script for Mono ([#5181](https://github.com/OmniSharp/omnisharp-vscode/issues/5181), [#5179](https://github.com/OmniSharp/omnisharp-vscode/issues/5179), PR: [omnisharp-roslyn##2398](https://github.com/OmniSharp/omnisharp-roslyn/pull/2398))
-  * Fall back to /usr/lib/os-release if /etc/os-release doesn't exist (PR: [omnisharp-roslyn##2380](https://github.com/OmniSharp/omnisharp-roslyn/pull/2380))
-  * Added support for linux-musl-x64 and linux-musl-arm64 ([omnisharp-roslyn##2366](https://github.com/OmniSharp/omnisharp-roslyn/issues/2366), PR: [omnisharp-roslyn##2395](https://github.com/OmniSharp/omnisharp-roslyn/pull/2395))
-  * Enable GoToDefinition for symbols in metadata documents ([#4818](https://github.com/OmniSharp/omnisharp-vscode/issues/4818), PR: [omnisharp-roslyn##2390](https://github.com/OmniSharp/omnisharp-roslyn/pull/2390))
-  * Use human readable doc in lsp's signature help ([omnisharp-roslyn##2372](https://github.com/OmniSharp/omnisharp-roslyn/issues/2372), PR: [omnisharp-roslyn##2392](https://github.com/OmniSharp/omnisharp-roslyn/pull/2392))
-  * Add TextEdits support to InlayHints (PR: [omnisharp-roslyn##2385](https://github.com/OmniSharp/omnisharp-roslyn/pull/2385))
-  * Fix Equals of AutoCompleteResponse and simplify some code (PR: [omnisharp-roslyn##2362](https://github.com/OmniSharp/omnisharp-roslyn/pull/2362))
-  * Support O# running on .NET 7 SDKs (PR: [omnisharp-roslyn##2377](https://github.com/OmniSharp/omnisharp-roslyn/pull/2377))
-  * Provide constructor accepting hostServices (PR: [omnisharp-roslyn##2373](https://github.com/OmniSharp/omnisharp-roslyn/pull/2373))
-  * Typo fix ([omnisharp-roslyn##2374](https://github.com/OmniSharp/omnisharp-roslyn/pull/2374))
-  * Update to latest .NET SDKs (PR: [omnisharp-roslyn##2378](https://github.com/OmniSharp/omnisharp-roslyn/pull/2378))
-  * Remove MSBuild and Mono from release packages ([omnisharp-roslyn##2339](https://github.com/OmniSharp/omnisharp-roslyn/issues/2339), PR: [omnisharp-roslyn##2360](https://github.com/OmniSharp/omnisharp-roslyn/pull/2360))
+## What's new in 1.25.8
+* Update Razor to 7.0.0-preview.23258.1 (PR: [#5672](https://github.com/OmniSharp/omnisharp-vscode/pull/5672))
+  * Fix issue with Razor attribute hover and Go to Definition (PR: [#8653](https://github.com/dotnet/razor/pull/8653))
+  * Fix issue with Razor formatting (PR: [#8669](https://github.com/dotnet/razor/pull/8669))
+* Combine test compile step into normal compile (PR: [#5666](https://github.com/OmniSharp/omnisharp-vscode/pull/5666))
 
-## What's new in 1.24.4
-* Remove inlayHints from diff view (PR: [#5151](https://github.com/OmniSharp/omnisharp-vscode/pull/5151))
-* Quote arguments containing spaces when launching OmniSharp ([#5150](https://github.com/OmniSharp/omnisharp-vscode/issues/5150), PR: [#5154](https://github.com/OmniSharp/omnisharp-vscode/pull/5154))
+## What's new in 1.25.7
+* Update Razor to 7.0.0-preview.23224.3 (PR: [#5660](https://github.com/OmniSharp/omnisharp-vscode/pull/5660))
+  * Fix issue with Razor diagnostics (PR: [#8622](https://github.com/dotnet/razor/pull/8622))
 
-## What's new in 1.24.3
-* Fix OmniSharp not found issue on Mono ([#5140](https://github.com/OmniSharp/omnisharp-vscode/issues/5140), PR: [#5141](https://github.com/OmniSharp/omnisharp-vscode/pull/5141))
+## What's new in 1.25.6
+* Update Razor to 7.0.0-preview.23213.4 (PR: [#5655](https://github.com/OmniSharp/omnisharp-vscode/pull/5655))
+  * Fix serialization issue with project.razor.json files (PR: [#8489](https://github.com/dotnet/razor/pull/8489))
 
-## What's new in 1.24.2
-* Support inlay hints ([#1932](https://github.com/OmniSharp/omnisharp-roslyn/issues/1932), PR: [#5107](https://github.com/OmniSharp/omnisharp-vscode/pull/5107))
-* Pass "shell: true" as a spawn option when launching O# (PR: [#5125](https://github.com/OmniSharp/omnisharp-vscode/pull/5125))
-* Add GoToTypeDefinition provider ([#4251](https://github.com/OmniSharp/omnisharp-vscode/issues/4251), PR: [#5094](https://github.com/OmniSharp/omnisharp-vscode/pull/5094))
-* Quote launch paths when necessary ([#5099](https://github.com/OmniSharp/omnisharp-vscode/issues/5099), PR: [#5101](https://github.com/OmniSharp/omnisharp-vscode/pull/5101))
-* Fix string escape for linux and unix (PR: [#5122](https://github.com/OmniSharp/omnisharp-vscode/pull/5122))
-* Debounce diagnostic requests ([#5085](https://github.com/OmniSharp/omnisharp-vscode/issues/5085), PR: [#5089](https://github.com/OmniSharp/omnisharp-vscode/pull/5089))
-* Add AnalyzeOpenDocumentsOnly (PR: [#5088](https://github.com/OmniSharp/omnisharp-vscode/pull/5088))
-* Upgrade OmniSharp to 1.38.2:
-    * Add analyze open documents only (PR: [omnisharp-roslyn#2346](https://github.com/OmniSharp/omnisharp-roslyn/pull/2346))
-    * Create a new GoToTypeDefinition endpoint ([omnisharp-roslyn#2297](https://github.com/OmniSharp/omnisharp-roslyn/issues/2297), PR: [omnisharp-roslyn#2315](https://github.com/OmniSharp/omnisharp-roslyn/pull/2315))
-    * Eliminate more instances of IWorkspaceOptionsProvider (PR: [omnisharp-roslyn#2343](https://github.com/OmniSharp/omnisharp-roslyn/pull/2343))
-    * Update Build.md brew cask instructions (PR: [omnisharp-roslyn#2355](https://github.com/OmniSharp/omnisharp-roslyn/pull/2355))
-    * Remove not used middleware extension methods and unify adding middleware (PR: [omnisharp-roslyn#2340](https://github.com/OmniSharp/omnisharp-roslyn/pull/2340))
-    * Pass --overwrite when pushing build artifacts to azure (PR: [omnisharp-roslyn#2358](https://github.com/OmniSharp/omnisharp-roslyn/pull/2358))
-    * Delete System.Configuration.ConfigurationManager from deployed packages ([#5113](https://github.com/OmniSharp/omnisharp-vscode/issues/5113), PR: [omnisharp-roslyn#2359](https://github.com/OmniSharp/omnisharp-roslyn/pull/2359))
-    * Support inlay hints (PR: [omnisharp-roslyn#2357](https://github.com/OmniSharp/omnisharp-roslyn/pull/2357))
-    * Update build tools to match .NET SDK 6.0.201 ([omnisharp-roslyn#2363](https://github.com/OmniSharp/omnisharp-roslyn/pull/2363))
+## What's new in 1.25.5
+* Update Razor to 7.0.0-preview.23124.2 (PR: [#5604](https://github.com/OmniSharp/omnisharp-vscode/pull/5604))
+  * Fix colorization when nullable operators are present ([#5570](https://github.com/OmniSharp/omnisharp-vscode/pull/5570))
+  * Add C#/HTML folding range support ([razor#8309](https://github.com/dotnet/razor/pull/8309))
+  * Formatting fixes ([razor#8318](https://github.com/dotnet/razor/pull/8318))
+* Update OmniSharp to 1.39.6 (PR: [#5625](https://github.com/OmniSharp/omnisharp-vscode/pull/5625))
+  * Use new VS threading version to match with Razor (PR:[#2518](https://github.com/OmniSharp/omnisharp-roslyn/pull/2518))
+* Update OmniSharp to 1.39.5 (PR: [#5618](https://github.com/OmniSharp/omnisharp-vscode/pull/5618))
+  * Update to Roslyn `4.6.0-3.23153.5` (PR:[#2511](https://github.com/OmniSharp/omnisharp-roslyn/pull/2511))
+  * Report to the client if the project being loaded is sdk style (PR:[#2502](https://github.com/OmniSharp/omnisharp-roslyn/pull/2502))
+* Automatically trust ASP.NET Core HTTPS development certificate (PR: [#5589](https://github.com/OmniSharp/omnisharp-vscode/pull/5589))
+* Improve outline to be less verbose (PR: [#5536](https://github.com/OmniSharp/omnisharp-vscode/pull/5536))
+* Update Razor TextMate grammar (PR: [#5570](https://github.com/OmniSharp/omnisharp-vscode/pull/5570))
+
+## What's new in 1.25.4
+* Update OmniSharp to 1.39.4 (PR: [#5544](https://github.com/OmniSharp/omnisharp-vscode/pull/5544))
+  * Disable snippets in sync completion (PR: [#2497](https://github.com/OmniSharp/omnisharp-roslyn/pull/2497))
+
+## What's new in 1.25.3
+* Update Razor to 7.0.0-preview.23067.5 (PR: [#5543](https://github.com/OmniSharp/omnisharp-vscode/pull/5543))
+  * Enables support for arm64
+  * Adds document color and color presentation features
+* Update Roslyn to 4.5.0-2.22527.10 (PR: [#2486](https://github.com/OmniSharp/omnisharp-roslyn/pull/2486))
+* Update dotnet-script dependencies to 1.4.0 (PR: [#2477](https://github.com/OmniSharp/omnisharp-roslyn/pull/2477))
+* Register the LanguageServerLogger only once (PR: [#2473](https://github.com/OmniSharp/omnisharp-roslyn/pull/2473))
+* Fix extension not finding mono. ([#5454](https://github.com/OmniSharp/omnisharp-vscode/issues/5454), PR: [#5484](https://github.com/OmniSharp/omnisharp-vscode/pull/5484))
+* Update debugger to 1.25.3. ([#5460](https://github.com/OmniSharp/omnisharp-vscode/issues/5460), PR: [#5489](https://github.com/OmniSharp/omnisharp-vscode/pull/5489))
+* Fix missing fix all commands. ([#5474](https://github.com/OmniSharp/omnisharp-vscode/issues/5474), PR: [#5475](https://github.com/OmniSharp/omnisharp-vscode/pull/5475))
+* Fix failure to parse sdk version and sdk path. ([#2412](https://github.com/OmniSharp/omnisharp-vscode/issues/2412), PR: [#5459](https://github.com/OmniSharp/omnisharp-vscode/pull/5459))
+* Handle custom OmniSharp launch paths. ([#5449](https://github.com/OmniSharp/omnisharp-vscode/issues/5449), PR: [#5456](https://github.com/OmniSharp/omnisharp-vscode/pull/5456))
+
+## What's new in 1.25.2
+* Fix the MSBuild version check on Unix and Linux platforms. ([#5443](https://github.com/OmniSharp/omnisharp-vscode/issues/5443), PR: [#5444](https://github.com/OmniSharp/omnisharp-vscode/pull/5444))
 
 ### Emmet support in Razor files
 

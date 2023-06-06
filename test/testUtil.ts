@@ -3,13 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import removeBomBuffer = require("strip-bom-buf");
-import removeBomString from "strip-bom";
-
-export function removeBOMFromBuffer(buffer: Buffer): Buffer {
-    return removeBomBuffer(buffer);
-}
-
-export function removeBOMFromString(line: string): string {
-    return removeBomString(line.trim());
+export function isNotNull<T>(value: T) : asserts value is NonNullable<T> {
+    if (value === null || value === undefined) {
+        throw new Error("value is null or undefined.");
+    }
 }

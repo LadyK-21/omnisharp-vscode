@@ -23,7 +23,7 @@ import { OmnisharpStatusBarObserver } from './observers/OmnisharpStatusBarObserv
 import { PlatformInformation } from './platform';
 import { StatusBarItemAdapter } from './statusBarItemAdapter';
 import { TelemetryObserver } from './observers/TelemetryObserver';
-import TelemetryReporter from 'vscode-extension-telemetry';
+import TelemetryReporter from '@vscode/extension-telemetry';
 import { addJSONProviders } from './features/json/jsonContributions';
 import { ProjectStatusBarObserver } from './observers/ProjectStatusBarObserver';
 import CSharpExtensionExports from './CSharpExtensionExports';
@@ -150,11 +150,12 @@ export async function activate(context: vscode.ExtensionContext): Promise<CSharp
     // If the dotnet bundle is installed, this will ensure the dotnet CLI is on the path.
     await initializeDotnetPath();
 
-    let telemetryObserver = new TelemetryObserver(platformInfo, () => reporter);
+    let useModernNetOption = optionProvider.GetLatestOptions().useModernNet;
+    let telemetryObserver = new TelemetryObserver(platformInfo, () => reporter, useModernNetOption);
     eventStream.subscribe(telemetryObserver.post);
 
     let networkSettingsProvider = vscodeNetworkSettingsProvider(vscode);
-    const useFramework = optionProvider.GetLatestOptions().useModernNet !== true;
+    const useFramework = useModernNetOption !== true;
     let installDependencies: IInstallDependencies = async (dependencies: AbsolutePathPackage[]) => downloadAndInstallPackages(dependencies, networkSettingsProvider, eventStream, isValidDownload, useFramework);
     let runtimeDependenciesExist = await ensureRuntimeDependencies(context.extension, eventStream, platformInfo, installDependencies, useFramework);
 
@@ -173,7 +174,7 @@ export async function activate(context: vscode.ExtensionContext): Promise<CSharp
     let coreClrDebugPromise = Promise.resolve();
     if (runtimeDependenciesExist) {
         // activate coreclr-debug
-        coreClrDebugPromise = coreclrdebug.activate(context.extension, context, platformInfo, eventStream);
+        coreClrDebugPromise = coreclrdebug.activate(context.extension, context, platformInfo, eventStream, optionProvider.GetLatestOptions());
     }
 
     let razorPromise = Promise.resolve();

@@ -7,21 +7,21 @@ import { IHostExecutableResolver } from "../../../src/constants/IHostExecutableR
 import { HostExecutableInformation } from "../../../src/constants/HostExecutableInformation";
 
 export const fakeMonoInfo: HostExecutableInformation = {
-    version: "someMonoVersion",
-    path: "somePath",
+    version: "someDotNetVersion",
+    path: "someDotNetPath",
     env: { }
 };
 
-export class FakeMonoResolver implements IHostExecutableResolver {
-    public getMonoCalled: boolean;
+export class FakeDotnetResolver implements IHostExecutableResolver {
+    public getDotnetCalled: boolean;
 
-    constructor(public willReturnMonoInfo = true) {
-        this.getMonoCalled = false;
+    constructor(public willReturnDotnetInfo = true) {
+        this.getDotnetCalled = false;
     }
 
     async getHostExecutableInfo(): Promise<HostExecutableInformation> {
-        this.getMonoCalled = true;
-        if (this.willReturnMonoInfo) {
+        this.getDotnetCalled = true;
+        if (this.willReturnDotnetInfo) {
             return Promise.resolve(fakeMonoInfo);
         }
 

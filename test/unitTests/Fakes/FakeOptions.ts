@@ -12,6 +12,7 @@ export function getEmptyOptions(): Options {
         /* waitForDebugger */false,
         /* loggingLevel */"",
         /* autoStart */false,
+        /* projectFilesExcludePattern */"",
         /* projectLoadTimeout */0,
         /* maxProjectResults */0,
         /* useEditorFormattingSettings */false,
@@ -19,7 +20,7 @@ export function getEmptyOptions(): Options {
         /* organizeImportsOnFormat */false,
         /* showReferencesCodeLens */false,
         /* showTestsCodeLens */false,
-        /* filteredSymbolsCodeLens */undefined,
+        /* filteredSymbolsCodeLens */undefined!,
         /* disableCodeActions */false,
         /* disableMSBuildDiagnosticWarning */false,
         /* showOmnisharpLogOnError */false,
@@ -54,7 +55,8 @@ export function getEmptyOptions(): Options {
         /* defaultLaunchSolution */"",
         /* monoPath */"",
         /* dotnetPath */"",
-        /* excludePaths */null,
-        /* maxProjectFileCountForDiagnosticAnalysis */null,
-        /* testRunSettings */"");
+        /* excludePaths */[],
+        /* maxProjectFileCountForDiagnosticAnalysis */1000,
+        /* testRunSettings */"",
+        /* dotNetCliPaths */[]);
 }
